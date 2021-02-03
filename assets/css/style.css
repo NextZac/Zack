@@ -29,8 +29,23 @@ h1 {
     transition: 0.3s;
 }
 
-.fadein {
+.slideUp {
+    height:0;
+}
 
+.spinner {
+    color: wheat;
+    display: block;
+    position: fixed;
+    z-index: 1031; /* High z-index so it is on top of the page */
+    top: 50%;
+    right: 50%; /* or: left: 50%; */
+    margin-top: -..px; /* half of the elements height */
+    margin-right: -..px; /* half of the elements widht */
+  }
+
+.fadein {
+    display: none;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */

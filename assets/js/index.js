@@ -42,11 +42,19 @@ var TxtRotate = function(el, toRotate, period) {
   window.onload = function() {
     var title = document.getElementById("hover")
     title.onmouseover = function() {
-        $('#hover').css("color", 'rgb(201, 0, 44)')
+        $('#hover').css("color", 'rgb(201, 0, 44)');
     }
     title.onmouseleave = function() {
-        $('#hover').css("color", 'wheat')
+        $('#hover').css("color", 'wheat');
     }
+    setTimeout(function(){
+    $('.spinner').fadeOut("slow");
+    }, 1000);
+    setTimeout(function(){
+    $('.fadein').css('display', 'block'); 
+    }, 1500);
+    
+    
     var elements = document.getElementsByClassName('txt-rotate');
     for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-rotate');
