@@ -40,6 +40,7 @@ var TxtRotate = function(el, toRotate, period) {
   };
   
   window.onload = function() {
+    var start = false;
     var title = document.getElementById("hover")
     title.onmouseover = function() {
         $('#hover').css("color", 'rgb(201, 0, 44)');
@@ -52,9 +53,10 @@ var TxtRotate = function(el, toRotate, period) {
     }, 1000);
     setTimeout(function(){
     $('.fadein').css('display', 'block'); 
+    start = true;
     }, 1500);
     
-    
+    setTimeout(function(){
     var elements = document.getElementsByClassName('txt-rotate');
     for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-rotate');
@@ -62,7 +64,7 @@ var TxtRotate = function(el, toRotate, period) {
       if (toRotate) {
         new TxtRotate(elements[i], JSON.parse(toRotate), period);
       }
-    }
+    }}, 1500);
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
