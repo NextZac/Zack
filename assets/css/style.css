@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+    background-color:rgb(46, 46, 46);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+    color: wheat;  
+    
+    font-size: 52px;
+}
+h2 {
+    color: wheat;  
+}
+h1 {
+    color: wheat;  
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }
+  
+
+#hover {
+    transition: 0.3s;
+}
+
