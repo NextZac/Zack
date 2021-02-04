@@ -43,10 +43,12 @@ var TxtRotate = function(el, toRotate, period) {
     var start = false;
     var title = document.getElementById("hover")
     title.onmouseover = function() {
-        $('#hover').css("color", 'rgb(201, 0, 44)');
+        $('#hover').css("color", 'rgb(46, 46, 46)');
+        $('#hover').css("text-shadow", '0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44), 0 0 1px rgb(201, 0, 44)');
     }
     title.onmouseleave = function() {
         $('#hover').css("color", 'wheat');
+        $('#hover').css("text-shadow", 'none');
     }
     setTimeout(function(){
     $('.spinner').fadeOut("slow");
