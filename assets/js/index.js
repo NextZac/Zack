@@ -1,3 +1,7 @@
+
+/* ---- stats.js config ---- */
+
+
 var TxtRotate = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -56,7 +60,7 @@ var TxtRotate = function(el, toRotate, period) {
     setTimeout(function(){
     $('.fadein').css('display', 'block'); 
     start = true;
-    }, 1500);
+    }, 500);
     
     setTimeout(function(){
     var elements = document.getElementsByClassName('txt-rotate');
@@ -73,3 +77,5 @@ var TxtRotate = function(el, toRotate, period) {
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid rgb(133, 166, 141) }";
     document.body.appendChild(css);
   };
+
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */

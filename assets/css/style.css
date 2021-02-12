@@ -33,18 +33,16 @@ h1 {
     height:0;
 }
 
-
-
-.spinner {
-    color: wheat;
-    display: block;
-    position: fixed;
-    z-index: 1031; /* High z-index so it is on top of the page */
-    top: 50%;
-    right: 50%; /* or: left: 50%; */
-    margin-top: -..px; /* half of the elements height */
-    margin-right: -..px; /* half of the elements widht */
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background-color: #b61924;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
   }
+
 
 .fadein {
     display: none;
