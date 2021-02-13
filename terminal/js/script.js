@@ -55,7 +55,7 @@ const commands = {
 	help: 
 	{
 		cmd: 'help',
-		res: 'Available commands:<br><br># <span class="red">aboutme</span> - Some information about me.<br># <span class="red">clear</span> - Clears terminal. <br># <span class="red">neofetch</span> - Fetches system information in the terminal.<br># <span class="red">links</span> - Links for others sites.<br># <span class="red">insta [Link]</span> - Get original instagram picture.'
+		res: 'Available commands:<br><br># <span class="red">music</span> - Play some of my favorite music.<br># <span class="red">aboutme</span> - Some information about me.<br># <span class="red">clear</span> - Clears terminal. <br># <span class="red">neofetch</span> - Fetches system information in the terminal.<br># <span class="red">links</span> - Links for others sites.<br># <span class="red">insta [Link]</span> - Get original instagram picture.'
 	}
 }
 
@@ -168,7 +168,7 @@ $('form').on('submit', function(e) {
 						res = '[ <span class="red">ERROR</span> ] You\'re already logged as Visitor!';
 					} else if (loginArray[2] === "root") {
 						res = 'su: Authentication failure';
-						if (typeof loginArray[4] !== "undefined" && MD5(loginArray[4]) === "8db96a12f8df8fea16e4eef54d280feb") {
+						if (typeof loginArray[4] !== "undefined" && MD5(loginArray[4]) === "3c3662bcb661d6de679c636744c66b62") {
 							root = 1;
 							res = '';
 						}
@@ -208,6 +208,7 @@ $('form').on('submit', function(e) {
 							cmd: vInput,
 							res: '<div><p>[ <span class="red">ERROR</span> ] Music is already stopped!</p></div>'
 						});
+						
 					} else {
 						pMusic.pause();
 						pMusic.currentTime = 0;
@@ -224,32 +225,36 @@ $('form').on('submit', function(e) {
 						cmd: vInput,
 						res: ''
 					});
+				} else if (vInput.startsWith("music volume")) {
+					var input = vInput.split(/(\s+)/);
+					var volume = input[4]
+					var realvolume = volume*0.01
+					if(isNaN(volume)) {
+						launchCommandAsVisitor({
+							cmd: vInput,
+							res: '<div><p>[ <span class="red">ERROR</span> ] Volume must be a number</p></div>'
+						});
+					} else if (volume > 100) {
+						launchCommandAsVisitor({
+							cmd: vInput,
+							res: '<div><p>[ <span class="red">ERROR</span> ] Volume can be 100 at max</p></div>'
+						});	
+					}
+					else {
+						pMusic.volume = realvolume;
+						launchCommandAsVisitor({
+							cmd: vInput,
+							res: '<div><p>[ <span class="green">SUCCESS</span> ] Music volume set to ' + volume +'%!</p></div>'
+						});
+				}
+					
 				} else {
 					launchCommandAsVisitor({
 						cmd: vInput,
-						res: '<div><p>[ <span class="red">bash</span> ] Usage: music [play/stop/link]</p></div>'
+						res: '<div><p>[ <span class="red">bash</span> ] Usage: music [play/stop/link/volume]</p></div>'
 					});
 				}
-			} /*else if (vInput.startsWith("friend")) {
-				if (vInput === "friend joffrey") {
-					launchCommandAsVisitor({
-						cmd: vInput,
-						res: '<div><p>' + InfoFriend("Joffrey", "George", "2001-10-11", "Slovakia", "76561198282756062") + '</p></div>'
-					});
-				} else if (vInput === "friend list") {
-					var friends = "";
-					friends += AddFriend("Joffrey", "For being funny and helpful friend");
-					launchCommandAsVisitor({
-						cmd: vInput,
-						res: '<div><p>' + friends + '</p></div>'
-					});
-				} else {
-					launchCommandAsVisitor({
-						cmd: vInput,
-						res: '<div><p>[ <span class="red">bash</span> ] Usage: friend [name/list]</p></div>'
-					});
-				}
-			}*/ else if (vInput.startsWith("insta")) {
+			} else if (vInput.startsWith("insta")) {
 				var vLink = $('input').val().substring(6);
 				if (vLink.includes("instagram.com/p/")) {
 					window.open(vLink + "media?size=l", '_blank').focus();
