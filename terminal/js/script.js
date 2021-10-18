@@ -40,7 +40,7 @@ const commands = {
 	aboutme:  
 	{
 		cmd: 'aboutme',
-		res: 'About Me:<br># <span class="red">Name:</span> Sebastian Pebsen Zachrau<br># <span class="red">Born:</span> ' + "December" + ' 11 2005 <span class="red">(Age: ' + GetAge("2005-12-11") + ')</span><br># <span class="red">Country:</span> Denmark/Estonia<br><br><span class="red">Bio:</span><br>Hey, I am Sebastian and i enjoy coding in my freetime along with playing some games.<br><br># <span class="red">Programming:</span> HTML, CSS, JS, PHP, C#, PY, LUA, JAVA.<br></span><br><span class="red">Languages:</span><br>» Estonian <span class="red">(Mother tongue)</span><br>» Danish <span class="red">(Father tongue)</span><br>» English <span class="red">(Intermediate)</span><br>» Russian <span class="red">(Basics)</span>'
+		res: 'About Me:<br># <span class="red">Name:</span> Sebastian Pebsen Zachrau<br># <span class="red">Born:</span> ' + "December" + ' 11 2005 <span class="red">(Age: ' + GetAge("2005-12-11") + ')</span><br># <span class="red">Country:</span> Denmark/Estonia<br><br><span class="red">Bio:</span><br>Hey, I am Sebastian and i enjoy coding in my freetime along with playing some games.<br><br># <span class="red">Programming:</span> HTML, CSS, JS, PHP, C#, PY, LUA, JAVA.<br></span><br><span class="red">Languages:</span><br>» Estonian <span class="red">(Mother tongue)</span><br>» Danish <span class="red">(Father tongue)</span><br>» English <span class="red">(Fluent)</span><br>» Russian <span class="red">(Basics)</span>'
 	},
 	links: 
 	{
